@@ -7,8 +7,8 @@ FROM node:erbium-alpine3.12 AS git-clone-src
 ARG ZWJ_BRANCH=master
 ARG Z2M_BRANCH=master
 WORKDIR /home/node
-RUN apk update && apk add --no-cache jq python3 alpine-sdk build-base linux-headers \
-RUN git clone -b ${ZWJ_BRANCH} --depth 1 https://github.com/zwave-js/node-zwave-js \
+RUN apk update && apk add --no-cache jq python3 alpine-sdk build-base linux-headers 
+RUN git clone -b ${ZWJ_BRANCH} --depth 1 https://github.com/zwave-js/node-zwave-js 
 RUN git clone -b ${Z2M_BRANCH} --depth 1 https://github.com/zwave-js/zwavejs2mqtt
 
 ##### LOCAL SOURCE #####
